@@ -4,7 +4,7 @@ info:
   docs: https://xaoxuu.com/wiki/material-x/
   cdn: # 把对应的那一行注释掉就使用本地的文件
     css:
-      style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.10/css/style.css
+      # style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.10/css/style.css
     js:
       app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.10/js/app.js
       search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.9/js/search.js
@@ -46,113 +46,84 @@ updated_date_format: 'llll' # 文章更新日期的格式
 
 
 ############################### 自定义 ###############################
-# page的封面
+# 主页封面
 cover:
   scheme: search    # 后期将会提供多种封面方案
-  # height: half      # full（默认值）: 首页封面占据整个第一屏幕，其他页面占半个屏幕高度， half: 所有页面都封面都只占半个屏幕高度
-  title: "xaoxuu"
-  # logo: assets/logo.png    # logo和title只显示一个，若同时设置，则只显示logo
+  height: half      # full: 封面占据整个第一屏幕， half: 封面只占半个屏幕高度
+  title: "·appx·"
+  # logo: assets/logo.png
   # search_placeholder: '搜索'
   # 主页封面菜单
   features:
-    - name: 博文
-      icon: fas fa-rss
+    - name: Recent
+      icon: fas fa-clock
       url: /
-    - name: 项目
-      icon: fas fa-code-branch
-      url: projects/
-    - name: 归档
-      icon: fas fa-archive
-      url: blog/archives/
-    - name: 关于
-      icon: fas fa-info-circle
-      url: about/
+    - name: Windows
+      icon: fab fa-windows
+      url: categories/windows/
+    - name: Mac
+      icon: fab fa-apple
+      url: categories/mac/
+    - name: Android
+      icon: fab fa-android
+      url: categories/android/
+    - name: iOS
+      icon: fab fa-apple
+      url: categories/ios/
 
 
 # 桌面端导航栏菜单
 menu_desktop:
-  - name: Cocoa Dev
+  - name: Windows
+    icon: fab fa-windows
+    url: categories/windows/
+  - name: Mac
     icon: fab fa-apple
-    url: blog/categories/dev/cocoa/
-  - name: Dev
-    icon: fas fa-laptop-code
-    url: blog/categories/dev/
-  - name: Life
-    icon: fas fa-coffee
-    url: blog/categories/life/
+    url: categories/mac/
+  - name: Android
+    icon: fab fa-android
+    url: categories/android/
+  - name: iOS
+    icon: fab fa-apple
+    url: categories/ios/
 
 # 手机端导航菜单（从右上角的按钮点击展开）
 menu_mobile:
-  - name: 近期文章
-    icon: fas fa-clock
-    url: /
-  - name: 文章归档
-    icon: fas fa-archive
-    url: blog/archives/
-  - name: 开源项目
-    icon: fas fa-code-branch
-    url: projects/
-  - name: 歌单分享
-    icon: fas fa-compact-disc
-    url: music/
-  - name: 我的友链
-    icon: fas fa-link
-    url: friends/
-  - name: 关于小站
-    icon: fas fa-info-circle
-    url: about/
+  - name: Windows
+    icon: fab fa-windows
+    url: categories/windows/
+  - name: Mac
+    icon: fab fa-apple
+    url: categories/mac/
+  - name: Android
+    icon: fab fa-android
+    url: categories/android/
+  - name: iOS
+    icon: fab fa-apple
+    url: categories/ios/
 
 
 # 侧边栏小部件，默认按下面给定的顺序全部显示，文章中还可以自定义显示一部分以及顺序
 sidebar:
   - widget: author
-    avatar: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png
-    social: true
-  - widget: toc
+    avatar: https://img.vim-cn.com/ae/2e0ffa7c770dbebba64f2f1770c29788a09e24.png
   - widget: grid
     icon: fas fa-map-signs
-    title: 站内导航
+    title: Navigation
     rows:
-      - name: 近期文章
+      - name: Recent
         icon: fas fa-clock
         url: /
-      - name: 文章归档
+      - name: Timeline
         icon: fas fa-archive
-        url: blog/archives/
-      - name: 开源项目
-        icon: fas fa-code-branch
-        url: projects/
-      - name: Wiki文档
-        icon: fas fa-book
-        url: wiki/
-      - name: 歌单分享
-        icon: fas fa-compact-disc
-        url: music/
-      - name: 我的友链
-        icon: fas fa-link
-        url: friends/
-      - name: 关于小站
-        icon: fas fa-info-circle
-        url: about/
-  - widget: category
-    more:
-      icon: fas fa-expand-arrows-alt
-      url: blog/categories/
+        url: archives/
+      - name: Forum
+        icon: fas fa-comments
+        url: forum/
   - widget: tagcloud
-    icon: fas fa-fire
-    more:
-      icon: fas fa-expand-arrows-alt
-      url: blog/tags/
-  - widget: related_posts # 需要安装插件  npm i -S hexo-related-popular-posts
-  - widget: music
-    icon: fas fa-compact-disc
-    title: "最近在听"
-    more:
-      icon: far fa-heart
-      url: https://music.163.com/#/user/home?id=63035382
-    server: netease   # netease（网易云音乐）tencent（QQ音乐） xiami（虾米） kugou（酷狗）
-    type: playlist    # song （单曲） album （专辑） playlist （歌单） search （搜索）
-    id: 2615636388     # 歌曲/专辑/歌单 ID
+    start_color: '#999'
+    end_color: '#EEE'
+  - widget: related_posts
 
 
 # 社交信息
@@ -162,9 +133,7 @@ social:
   - icon: fas fa-envelope
     url: mailto:me@xaoxuu.com
   - icon: fab fa-github
-    url: https://github.com/xaoxuu
-  - icon: fas fa-headphones-alt
-    url: https://music.163.com/#/user/home?id=63035382
+    url: https://github.com/appx-online
 
 
 # 分享按钮
@@ -188,7 +157,8 @@ share:
 
 
 
-# footer: '页脚文字，支持[markdown](/)'
+footer: '本站所有下载链接均标注文件来源，如果部分第三方下载源的软件侵犯了开发商或者合法代理商的权利，可联系站长删除该链接。'
+
 
 
 ############################### 评论 ###############################
