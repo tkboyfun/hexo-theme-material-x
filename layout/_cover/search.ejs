@@ -8,7 +8,7 @@
   <div class="m_search">
     <form name="searchform" class="form u-search-form">
       <input type="text" class="input u-search-input" placeholder="<%- theme.cover.search_placeholder %>" />
-      <span class="icon"><i class="fas fa-search fa-fw"></i></span>
+      <i class="icon fas fa-search fa-fw"></i>
     </form>
   </div>
 <% } %>
@@ -18,7 +18,13 @@
       <% (theme.cover.features || []).forEach(function(value){ %>
         <li>
           <a class="nav home" href="<%= url_for(value.url) %>"
-          id="<%= url_for(value.url).replace(/\/|%/g, "")?url_for(value.url).replace(/\/|%/g, ""):"home" %>">
+            <% if (value.rel) { %>
+              rel="<%- value.rel %>"
+            <% } %>
+            <% if (value.target) { %>
+              target="<%- value.target %>"
+            <% } %>
+            id="<%= url_for(value.url).replace(/\/|%/g, "")?url_for(value.url).replace(/\/|%/g, ""):"home" %>">
             <i class='<%= value.icon %> fa-fw'></i>&nbsp;<%= __('navbar.'+value.name) == ('navbar.'+value.name) ? value.name : __('navbar.'+value.name) %>
           </a>
         </li>

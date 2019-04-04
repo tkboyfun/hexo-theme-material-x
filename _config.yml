@@ -6,8 +6,8 @@ info:
     css:
       # style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.10/css/style.css
     js:
-      app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.10/js/app.js
-      search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.9/js/search.js
+      # app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.10/js/app.js
+      search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.10/js/search.js
       volantis: https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1/js/volantis.min.js
 
 
@@ -38,11 +38,11 @@ music:
   autoplay: false   # 自动播放
 
 # 友链页头像占位图
-loading_img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png
+avatar_placeholder: https://img.vim-cn.com/ae/2e0ffa7c770dbebba64f2f1770c29788a09e24.png
 
 # 日期格式 http://momentjs.com/docs/
-date_format: 'll' # 文章发布日期的格式
-updated_date_format: 'llll' # 文章更新日期的格式
+date_format: 'YYYY-MM-DD' # 文章发布日期的格式
+updated_date_format: 'lll' # 文章更新日期的格式
 
 
 ############################### 自定义 ###############################
@@ -70,6 +70,7 @@ cover:
     - name: iOS
       icon: fab fa-apple
       url: categories/ios/
+
 
 
 # 桌面端导航栏菜单
@@ -103,6 +104,15 @@ menu_mobile:
     url: categories/ios/
 
 
+# 默认的meta信息，文章中没有配置则按照这里的配置来显示，设置为false则不显示
+# 其中，title只在top中有效，music和thumbnail无需在这里设置，文章中有则显示
+# 如果tags放置在meta.header中，那么在post列表中不显示（因为卡片下方已经有了）
+meta:
+  header: [title, author, date, categories, counter]
+  footer: [updated, tags, share]
+
+
+
 # 侧边栏小部件，默认按下面给定的顺序全部显示，文章中还可以自定义显示一部分以及顺序
 sidebar:
   - widget: author
@@ -123,7 +133,12 @@ sidebar:
   - widget: tagcloud
     start_color: '#999'
     end_color: '#EEE'
+    more:
+      icon: fas fa-expand-arrows-alt
+      url: blog/tags/
+      rel: nofollow
   - widget: related_posts
+
 
 
 # 社交信息
