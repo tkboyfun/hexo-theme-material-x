@@ -125,7 +125,7 @@ sidebar:
     avatar: https://img.vim-cn.com/ae/2e0ffa7c770dbebba64f2f1770c29788a09e24.png
   - widget: grid
     icon: fas fa-map-signs
-    title: Navigation
+    title: 站内导航
     rows:
       - name: 近期
         icon: fas fa-clock
@@ -200,10 +200,10 @@ valine:
   guest_info: nick,mail,link #valine comment header info
   placeholder: Just Go Go~ # valine comment input placeholder(like: Please leave your footprints )
   avatar: mp # gravatar style https://valine.js.org/avatar
-  pageSize: 20 # comment list page size
+  pageSize: 10 # comment list page size
   verify: false # valine verify code (true/false)
   notify: false # valine mail notify (true/false)
-  lang: en
+  lang: zh-cn
   highlight: false
 
 
