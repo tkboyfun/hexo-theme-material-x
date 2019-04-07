@@ -4,10 +4,10 @@ info:
   docs: https://xaoxuu.com/wiki/material-x/
   cdn: # 把对应的那一行注释掉就使用本地的文件
     css:
-      # style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.10/css/style.css
+      # style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.17/css/style.css
     js:
-      # app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.10/js/app.js
-      search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.10/js/search.js
+      app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.17/js/app.js
+      search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.17/js/search.js
       volantis: https://cdn.jsdelivr.net/gh/xaoxuu/volantis@1/js/volantis.min.js
 
 
@@ -42,7 +42,7 @@ avatar_placeholder: https://img.vim-cn.com/ae/2e0ffa7c770dbebba64f2f1770c29788a0
 
 # 日期格式 http://momentjs.com/docs/
 date_format: 'YYYY-MM-DD' # 文章发布日期的格式
-updated_date_format: 'lll' # 文章更新日期的格式
+updated_date_format: 'll' # 文章更新日期的格式
 
 
 ############################### 自定义 ###############################
@@ -78,15 +78,19 @@ menu_desktop:
   - name: Windows
     icon: fab fa-windows
     url: categories/windows/
+    rel: nofollow
   - name: Mac
     icon: fab fa-apple
     url: categories/mac/
+    rel: nofollow
   - name: Android
     icon: fab fa-android
     url: categories/android/
+    rel: nofollow
   - name: iOS
     icon: fab fa-apple
     url: categories/ios/
+    rel: nofollow
 
 # 手机端导航菜单（从右上角的按钮点击展开）
 menu_mobile:
@@ -105,12 +109,14 @@ menu_mobile:
 
 
 # 默认的meta信息，文章中没有配置则按照这里的配置来显示，设置为false则不显示
-# 其中，title只在top中有效，music和thumbnail无需在这里设置，文章中有则显示
+# 其中，title只在header中有效，music和thumbnail无需在这里设置，文章中有则显示
 # 如果tags放置在meta.header中，那么在post列表中不显示（因为卡片下方已经有了）
 meta:
-  header: [title, author, date, categories, counter]
-  footer: [updated, tags, share]
+  header: [title, author, updated, categories, counter, top]
+  footer: [date, updated, tags, share]
 
+# 主体元素，你也可以在页面的Front-matter中设置
+body: [article, comments]
 
 
 # 侧边栏小部件，默认按下面给定的顺序全部显示，文章中还可以自定义显示一部分以及顺序
@@ -127,9 +133,11 @@ sidebar:
       - name: Timeline
         icon: fas fa-archive
         url: archives/
+        rel: nofollow
       - name: Forum
         icon: fas fa-comments
         url: forum/
+        rel: nofollow
   - widget: tagcloud
     start_color: '#999'
     end_color: '#EEE'

@@ -3,7 +3,12 @@ var customSearch;
 (function ($) {
 
 	"use strict";
-	const scrollCorrection = 80; // (header height = 64px) + (gap = 16px)
+	var scrollCorrection = 80; // (header height = 64px) + (gap = 16px)
+	const $headerAnchor = $('.l_header', '.cover-wrapper');
+	if ($headerAnchor[0]) {
+		scrollCorrection = $headerAnchor[0].clientHeight + 16;
+	}
+
 	function scrolltoElement(elem, correction) {
 		correction = correction || scrollCorrection;
 		const $elem = elem.href ? $(elem.getAttribute('href')) : $(elem);
@@ -14,18 +19,25 @@ var customSearch;
 		// button
 		const $postsBtn = $('.menu .active');
 		const $topBtn = $('.s-top');
+		const $titleBtn = $('h1.title', '#header-meta');
 		// anchor
-		const $coverAnchor = $('.l_header', '.cover-wrapper');
 		const $bodyAnchor = $('.l_body');
 		// action
 		if ($postsBtn.length && $bodyAnchor) {
 			$postsBtn.click(e => { e.preventDefault(); e.stopPropagation(); scrolltoElement($bodyAnchor); });
 		}
+		if ($titleBtn.length && $bodyAnchor) {
+			$titleBtn.click(e => { e.preventDefault(); e.stopPropagation(); scrolltoElement($bodyAnchor); });
+		}
 		if ($topBtn.length && $bodyAnchor) {
 			$topBtn.click(e => { e.preventDefault(); e.stopPropagation(); scrolltoElement($bodyAnchor); });
 		}
 
-		const showCoverPoint = document.body.clientHeight*0.6 - 100;
+		const $coverAnchor = $('.cover-wrapper');
+		var showHeaderPoint = 0;
+		if ($coverAnchor[0]) {
+			showHeaderPoint = $coverAnchor[0].clientHeight - 64;
+		}
 		var pos = document.body.scrollTop;
 		$(document, window).scroll(() => {
 			const scrollTop = $(window).scrollTop();
@@ -41,10 +53,10 @@ var customSearch;
 			} else {
 				$topBtn.removeClass('show').removeClass('hl');
 			}
-			if (scrollTop > document.body.clientHeight*0.6 - 100) {
-				$coverAnchor.addClass('show');
+			if (scrollTop > showHeaderPoint) {
+				$headerAnchor.addClass('show');
 			} else {
-				$coverAnchor.removeClass('show');
+				$headerAnchor.removeClass('show');
 			}
 		});
   }
@@ -111,8 +123,10 @@ var customSearch;
       index = index[0];
       idname = idname.split(index)[0];
     }
-    $active_link = $('#' + idname, $headerMenu);
-    setUnderline($active_link);
+		if (idname && $headerMenu) {
+			$active_link = $('#' + idname, $headerMenu);
+			setUnderline($active_link);
+		}
 	}
 
 	function setHeaderMenuPhone() {
