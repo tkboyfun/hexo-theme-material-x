@@ -196,12 +196,12 @@ valine:
   #   app_id: 你的appId
   #   app_key: 你的appKey
   guest_info: nick,mail,link #valine comment header info
-  placeholder: 快来评论吧~ # valine comment input placeholder(like: Please leave your footprints )
+  placeholder: Just Go Go~ # valine comment input placeholder(like: Please leave your footprints )
   avatar: mp # gravatar style https://valine.js.org/avatar
   pageSize: 20 # comment list page size
   verify: false # valine verify code (true/false)
   notify: false # valine mail notify (true/false)
-  lang: zh-cn
+  lang: en
   highlight: false
 
 
