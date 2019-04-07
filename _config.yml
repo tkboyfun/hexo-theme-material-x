@@ -4,7 +4,7 @@ info:
   docs: https://xaoxuu.com/wiki/material-x/
   cdn: # 把对应的那一行注释掉就使用本地的文件
     css:
-      # style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.17/css/style.css
+      style: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.17/css/style.css
     js:
       app: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.17/js/app.js
       search: https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.4.17/js/search.js
@@ -127,23 +127,25 @@ sidebar:
     icon: fas fa-map-signs
     title: Navigation
     rows:
-      - name: Recent
+      - name: 近期
         icon: fas fa-clock
         url: /
-      - name: Timeline
+      - name: 归档
         icon: fas fa-archive
         url: archives/
         rel: nofollow
-      - name: Forum
+      - name: 留言
         icon: fas fa-comments
         url: forum/
         rel: nofollow
+      - name: 收录
+        icon: fas fa-plus
+        url: include/
+        rel: nofollow
   - widget: tagcloud
-    start_color: '#999'
-    end_color: '#EEE'
     more:
       icon: fas fa-expand-arrows-alt
-      url: blog/tags/
+      url: tags/
       rel: nofollow
   - widget: related_posts
 
@@ -180,7 +182,7 @@ share:
 
 
 
-footer: '本站所有下载链接均标注文件来源，如果部分第三方下载源的软件侵犯了开发商或者合法代理商的权利，可联系站长删除该链接。'
+footer: '本站所有下载链接均标注文件来源，如果部分第三方下载源的软件侵犯了开发商或者合法代理商的权利，可联系文章作者删除该链接。'
 
 
 
